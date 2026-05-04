@@ -20,19 +20,19 @@
             @csrf
             
             <label for="nome">Nome:</label>
-            <input type="text" name="nomeEditora" id="nomeEditora" placeholder="Nome da Editora..." require value="{{old('nomeEditora')}}">
+            <input type="text" name="nomeEditora" id="nomeEditora" placeholder="Nome da Editora" require value="{{old('nomeEditora')}}">
             <br><br>
 
             <label for="cnpj">CNPJ:</label>
-            <input type="number" name="cnpj" id="cnpj" placeholder="CNPJ..." require value="{{old('cnpj')}}">
+            <input type="number" name="cnpj" id="cnpj" placeholder="CNPJ" require value="{{old('cnpj')}}">
             <br><br>
 
             <label for="pais">País:</label>
-            <input type="text" name="pais" id="pais" placeholder="País da Editora..." require value="{{old('pais')}}">
+            <input type="text" name="pais" id="pais" placeholder="País da Editora" require value="{{old('pais')}}">
             <br><br>
 
             <label for="cidade">Cidade:</label>
-            <input type="text" name="cidade" id="cidade" placeholder="Cidade da Editora..." require value="{{old('cidade')}}">
+            <input type="text" name="cidade" id="cidade" placeholder="Cidade da Editora" require value="{{old('cidade')}}">
             
             <button type="submit">Cadastrar</button>
         </form>

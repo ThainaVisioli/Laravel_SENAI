@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Atualizar Produto</title>
 </head>
-<body>
+<body  style="font-family: 'Arial', sans-serif;">
     <h1>Atualizar Produto</h1>
 
     @if(session('success'))
@@ -17,9 +17,13 @@
         @csrf
         @method('PUT')
 
-        <input type="text" name="nome" value="{{ old('nome, $produto->nome')}}" required>
-        <input type="text" name="numCorredor" value="{{ old('numCorredor, $produto->numCorredor')}}" required>
-        <button type="submit">Atualizar</button>
+        <input type="text" name="nome" placeholder="Nome" value="{{ old('nome, $produto->nome')}}" required>
+        <br><br>
+        <input type="numeric" name="quantidade" placeholder="Quantidade" value="{{ old('quantidade, $produto->quantidade')}}" required>
+        <br><br>
+        <input type="numeric" name="preco" placeholder="Preço" value="{{ old('preco, $produto->preco')}}" required>
+        <br><br>
+        <button type="submit" style="background-color: rgb(68, 0, 255); color: white;">Atualizar</button>
     </form>
 
     @if ($errors->any())

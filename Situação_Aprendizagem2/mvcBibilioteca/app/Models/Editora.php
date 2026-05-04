@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Editora extends Model{
 
-    protected $table = 'setores'; 
+    protected $table = 'setores'; // deixar no plural e em português
+
     protected $fillable = [
         'nomeEditora',
         'cnpj',

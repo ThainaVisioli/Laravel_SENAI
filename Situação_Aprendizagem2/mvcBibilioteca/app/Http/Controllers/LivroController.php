@@ -82,7 +82,7 @@ class LivroController extends Controller{
             'imposto' => $request->imposto
         ]);
 
-        return redirect()->back()->with('success','Livro atualizado!');
+        return redirect()->back()->with('success','Livro atualizado com sucesso!');
     }
 
 }
