@@ -1,52 +1,42 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\SetorController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produto/listar', [ProdutoController::class, 'listar'])->name('produto.listar');
+// GET - listar os produtos cadastrados
+Route::get('/produto/listar',[ProdutoController::class, 'listar'])->name('produto.listar');
 
+Route::get('/produto/cadastrar',[ProdutoController::class, 'cadastro']
+)->name('produto.cadastro');
 
-// =====================
-// ROTAS ALUNO
-// =====================
+// POST - enviar os dados para cadastrar usuários
+Route::post('/produto/salvar',[ProdutoController::class, 'add'])
+->name('produto.salvar');
 
-// LISTAR
-Route::get('/produto/listar', [ProdutoController::class, 'listar'])
-    ->name('produto.listar');
-
-// FORM CADASTRO (AGORA CORRETO)
-Route::get('/produto/cadastrar', [ProdutoController::class, 'create'])
-    ->name('produto.cadastro');
-
-// SALVAR
-Route::post('/produto/salvar', [ProdutoController::class, 'add'])
-    ->name('produto.salvar');
-
-// EDITAR
+// Tela de Atualizar
 Route::get('/produto/{id}/atualizar', [ProdutoController::class, 'atualizar'])
-    ->name('produto.editar');
+->name('produto.atualizar');
 
-// UPDATE
-Route::put('/produto/{id}/update', [ProdutoController::class, 'update'])
-    ->name('produto.update');
+Route::put('/produto/{id}/update',[ProdutoController::class, 'update'])
+->name('produto.update');
 
-// DELETE
-Route::delete('/produto/{id}', [ProdutoController::class, 'deletar'])
-    ->name('aluno.deletar');
+Route::delete('/produto/{id}',[ProdutoController::class, 'deletar'])
+->name('produto.deletar');
 
+// ROTAS Dos Setores
 
-// =====================
-// ROTAS TURMA
-// =====================
+// GET - listar os setores cadastrados
+Route::get('/setor/listar',[SetorController::class, 'listar'])->
+name('setor.listar');
 
-// FORM TURMA (pode continuar assim)
-Route::get('/setor/cadastrar', function(){
-    return view('cadastrosetor');
-})->name('setor.cadastrosetor');
+Route::get('/setor/cadastrar', function(){ 
+    return view('cadastroSetor');
+})->name('setor.cadastro');
 
-// SALVAR setor
-Route::post('/setor/salvar', [SetorController::class, 'add'])
-    ->name('setor.salvar');
+Route::post('/setor/salvar',[SetorController::class, 'add'])
+->name('setor.salvar');

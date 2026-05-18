@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setores;   // Importa o model Produto
+use App\Models\Setores; 
+use App\Models\Produto;  // Importa o model Produto
 use Illuminate\Http\Request;
 
 class SetorController extends Controller
@@ -22,13 +23,13 @@ class SetorController extends Controller
         // Validação dos dados
         $request->validate([
             'nome' => 'required|string|max:255',
-            'numCorredor' => 'required|integer|min:0',
+            'num_setor' => 'required|integer|min:0',
         ]);
 
         // Cria o produto
         Setores::create([
             'nome' => $request->nome,
-            'numCorredor' => $request->numCorredor,
+            'num_setor' => $request->num_setor,
         ]);
 
         // Redireciona de volta com mensagem de sucesso
